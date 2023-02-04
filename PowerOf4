@@ -1,0 +1,26 @@
+/**
+ * @param {number} n
+ * @return {boolean}
+ */
+var isPowerOfFour = function(n) {
+    let powerVal=0
+    if(n==0)
+    return false
+    if(n==1)
+    {
+        return true
+    }
+    if(n%4!=0)
+    return false
+    let i=0
+   while(powerVal<=n)
+   {
+       powerVal=Math.pow(4,i)
+       if(powerVal==n)
+       {
+           return true
+       }
+       i=i+1
+   }
+return false
+};
