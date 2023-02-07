@@ -1,0 +1,35 @@
+/**
+ * @param {number[]} score
+ * @return {string[]}
+ */
+var findRelativeRanks = function(score) {
+    let computeArray=score.slice()
+let finalArray=[]
+let tempArray=[]
+tempArray=computeArray.sort(compare)
+let index=0
+for(let i=0;i<tempArray.length;i++)
+{
+  index=tempArray.indexOf(score[i])+1
+  if(index==1)
+  {
+    finalArray.push("Gold Medal")
+  }
+  else if(index==2)
+  {
+    finalArray.push("Silver Medal")
+  }
+  else if(index==3)
+  {
+    finalArray.push("Bronze Medal")
+  }
+  else
+  {
+    finalArray.push(index.toString())
+  }
+}
+return finalArray
+function compare(a,b){
+ return b-a
+}
+};
