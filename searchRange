@@ -1,0 +1,40 @@
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ */
+var searchRange = function(nums, target) {
+let last=0
+let first=0
+let i=0
+let found=true
+    if(nums.length<=0)
+    {
+        return [-1,-1]
+    }
+
+for(i;i<nums.length;i++)
+{
+  
+  let index=nums.indexOf(target)
+  if(found)
+  {
+    if(nums[i]==target)
+    {
+      last=i
+    }
+  }
+  if(index!=-1)
+  {
+    
+    first=index
+    i==index+1
+    found==true
+  }
+  else 
+  {
+    return([-1,-1])
+  }
+}
+return([first,last])
+};
