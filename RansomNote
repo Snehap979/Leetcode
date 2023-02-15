@@ -1,0 +1,24 @@
+/**
+ * @param {string} ransomNote
+ * @param {string} magazine
+ * @return {boolean}
+ */
+var canConstruct = function(ransomNote, magazine) {
+ransomNote=ransomNote.split("")
+let count=0
+for(let i=0;i<ransomNote.length;i++)
+{
+if(!magazine.includes(ransomNote[i]))
+{
+  return false
+}
+else
+{
+  magazine=magazine.replace(ransomNote[i],"")
+    count=count+1
+}
+if(count==ransomNote.length)
+return true
+}
+
+};
