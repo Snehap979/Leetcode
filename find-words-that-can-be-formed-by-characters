@@ -1,0 +1,29 @@
+match=true
+let sum=0
+for(let i=0;i<words.length;i++)
+{
+  match=true
+  // console.log(words[i])
+  tempChars=chars
+  words[i].split("").map((char,index)=>{
+    // console.log(!chars.includes(char))
+  
+  
+    if(!tempChars.includes(char))
+    {
+          match=false
+    }
+    else
+    {
+    tempChars=tempChars.replace(char,"")
+    }
+    // if(chars[i].lastIndexOf())
+  })
+  if(match==true)
+  {
+    console.log("here",words[i])
+    // for(let i=0)
+    sum=sum+words[i].length
+  }
+}
+console.log("sum",sum)
