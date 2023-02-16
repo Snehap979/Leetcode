@@ -1,0 +1,32 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+    let max=0
+let maxNumber=0
+let map1=new Map()
+if(nums.length==1)
+{
+return nums[0]
+}
+for(let i=0;i<nums.length;i++) {
+  if(map1.get(nums[i])==undefined)
+  {
+    map1.set(nums[i],1)
+  }
+  else
+  {
+    let count=map1.get(nums[i])
+    count=count+1
+    if(max<count)
+    {
+      max=count
+      maxNumber=nums[i]
+    }
+    map1.set(nums[i],count)
+  }
+  
+}
+return maxNumber
+};
