@@ -1,0 +1,43 @@
+var mostFrequentEven = function(nums) {
+    if(nums.length==1 && nums[0]%2==0)
+    {
+        return nums[0]
+    }
+   nums.sort(compare)
+function compare(a,b)
+{
+  return a-b
+}
+let max=0
+let valueOfKey=-1
+let map1=new Map()
+for(let i=0;i<nums.length;i++) {
+  if(nums[i]%2==0)
+  {
+    if(map1.get(nums[i])==undefined)
+  {
+    map1.set(nums[i],1)
+  }
+  else
+  {
+    let count=map1.get(nums[i])
+    count=count+1
+    map1.set(nums[i],count)
+  }
+  }
+  
+  
+}
+// if(map1=={})
+// {
+//   return -1
+// }
+for (let [key, value] of map1) {
+if(value>max)
+{
+  max=value
+  valueOfKey=key
+}
+}
+return valueOfKey
+};
