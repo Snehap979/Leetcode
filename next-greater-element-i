@@ -1,0 +1,31 @@
+/**
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+var nextGreaterElement = function(nums1, nums2) {
+   let found=false
+let finalArray=[]
+for(let i=0;i<nums1.length;i++)
+{
+  let currentIndex=nums2.indexOf(nums1[i])
+  let j=currentIndex+1
+  found=false
+  while(j<nums2.length)
+  {
+    if(nums2[j]>nums1[i])
+    {
+      found=true
+      finalArray.push(nums2[j])
+      break
+    }
+  j++
+  }
+  if(found==false)
+  {
+    finalArray.push(-1)
+  }
+// return finalArray
+}
+return finalArray
+};
