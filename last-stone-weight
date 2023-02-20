@@ -1,0 +1,22 @@
+  let tempStones=[...stones]
+tempStones.sort(compare)
+function compare(a,b){
+  return b-a
+}
+for(let i=0;i<stones.length;i++)
+{
+  i=0
+  if(tempStones[i]>=tempStones[i+1])
+  {
+    let index=stones.indexOf(tempStones[i]) 
+    let diff=tempStones[i]-tempStones[i+1]
+    stones[index]=diff
+    let spliceIndex=stones.indexOf(tempStones[i+1])
+    stones.splice(spliceIndex,1)
+  }
+  tempStones=[...stones]
+  tempStones.sort(compare)
+  
+}
+return stones[0]
+};
