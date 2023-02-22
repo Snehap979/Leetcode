@@ -1,0 +1,53 @@
+/**
+ * @param {number[][]} restaurants
+ * @param {number} veganFriendly
+ * @param {number} maxPrice
+ * @param {number} maxDistance
+ * @return {number[]}
+ */
+var filterRestaurants = function(restaurants, veganFriendly, maxPrice, maxDistance) {
+    let arr=[]
+let max=0
+let tempArray=[]
+let finalArray=[]
+if(veganFriendly==1)
+{
+restaurants.map((key)=>{
+  let obj={}
+  if(key[2]==1 && key[3]<=maxPrice && key[4]<=maxDistance)
+  {
+   obj.key=key[0]
+   obj.value=key[1]
+   tempArray.push(obj)
+  }
+
+})
+
+}
+else
+{
+ restaurants.map((key)=>{
+  let obj={}
+  if(key[3]<=maxPrice && key[4]<=maxDistance)
+  {
+   obj.key=key[0]
+   obj.value=key[1]
+   tempArray.push(obj)
+    arr.push(key)
+  }
+
+})
+}
+tempArray.sort((a,b)=>{
+  if(a.value==b.value)
+  {
+    return b.key-a.key
+  }
+  else
+  return b.value-a.value
+})
+tempArray.map((key)=>{
+  finalArray.push(key.key)
+})
+return finalArray
+};
