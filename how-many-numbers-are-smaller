@@ -1,0 +1,20 @@
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var smallerNumbersThanCurrent = function(nums) {
+    const sortedNums=[...nums]
+let finalArray=[]
+sortedNums.sort(compare)
+function compare(a,b){
+  return a-b
+}
+for(let i=0;i<nums.length;i++)
+{
+  let num=sortedNums.indexOf(nums[i])
+ 
+    finalArray.push(num)
+  
+}
+return finalArray
+};
