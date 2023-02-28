@@ -1,0 +1,8 @@
+/**
+ * @param {string} address
+ * @return {string}
+ */
+var defangIPaddr = function(address) {
+    let newStr= address.replaceAll('.',"[.]")
+    return newStr
+};
