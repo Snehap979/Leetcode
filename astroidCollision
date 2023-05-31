@@ -1,0 +1,109 @@
+asteroids =[2,-1,1,-2]
+
+let a=asteroids
+let prev=0
+let stack=[asteroids[0]]
+for(let i=1;i<asteroids.length;i++)
+{
+  console.log("i",i,stack)
+  let top=stack.length>0?stack[stack.length-1]:asteroids[i]
+  //top is negative,incoming is positive then push
+  if(stack.length==0)
+  {
+    stack.push(top)
+    i++
+  }
+  console.log("top after removing",top,i,asteroids[i])
+  if(top<0 && asteroids[i]>0)
+  {
+    stack.push(asteroids[i])
+  }
+  //top is negative,incoming is negative then push
+  else if(top <0 && asteroids[i]<0)
+  {
+    console.log("in here")
+    stack.push(asteroids[i])
+  }
+  //top is positive,incoming is positive then push
+  else if(top >0 && asteroids[i]>0)
+  {
+    stack.push(asteroids[i])
+  }
+  else if(top>0 && asteroids[i]<0)
+  {
+    console.log("inside the else if top>0 && asteroids[i]<0",top,asteroids[i])
+    if(top+asteroids[i]!=0)
+    {
+      if(top<Math.abs(asteroids[i]))
+      {
+        //first pop the top of the stack and check if other elements should be popped as well
+        console.log("stack before popping",stack)
+        stack.pop()
+        console.log("stack after popping",stack)
+        let valueToBePushed=asteroids[i]
+        top=stack[stack.length-1]
+        let startPop=true
+        console.log("coming here")
+        if(top==undefined && i==asteroids.length-1)
+        {
+          stack.push(asteroids[i])
+          startPop=false
+        }
+        while(startPop)
+        {
+        top=stack[stack.length-1]
+        
+        console.log("top,valueToBePushed.........",top,valueToBePushed)
+        if(top+valueToBePushed==0)
+        {
+          stack.pop()
+          // i++
+        // prev=top
+          startPop=false
+        }
+        // if()
+        if(top<Math.abs(valueToBePushed) && top>0)
+        {
+           stack.pop()
+           console.log("stack after popping",stack)
+       }
+       else if(top<0)
+       {
+         console.log("in esle if")
+         stack.push(asteroids[i])
+         startPop=false
+       }
+       else if(stack.length==0)
+       {
+         
+         asteroids[i]!=undefined && top+asteroids[i]!=0?stack.push(asteroids[i]):[]
+         console.log("in else if if stack length==0",stack,top)
+         startPop=false
+       }
+       else
+       {
+         startPop=false
+         
+       }
+}
+      // stack.push(asteroids[i])
+        
+      }
+      // else
+      // {
+      
+      // }
+    }
+    else
+    {
+      console.log("inside the else after popping")
+      stack.pop()
+      // i++
+     
+    }
+  }
+  
+  //top is right and incoming is left,then collision
+  //in collision check if they are unequal and do the comparision 
+  console.log("stack",stack)
+}
