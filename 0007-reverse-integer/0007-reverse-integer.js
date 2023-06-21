@@ -28,10 +28,8 @@ else
   rev=rev+s.reverse().join("")
   
 }
-console.log("rev",rev)
      let lowerLimit=Math.pow(-2,31)
     let upperLimit=Math.pow(2,31)-1
-    console.log(lowerLimit,upperLimit)
     if(rev<lowerLimit || rev>upperLimit)
         {
             rev=0
