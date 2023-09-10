@@ -16,7 +16,7 @@ var countNodes = function(root) {
       {
           arr=[root]
           let deque=[]
-          let count=0
+          // let count=0
           while(arr.length!=0)
               {
                   let node=arr.pop()
@@ -42,7 +42,7 @@ var countNodes = function(root) {
                       }
                  
               }
-           return count
+           // return count
       }
    return count
 };
