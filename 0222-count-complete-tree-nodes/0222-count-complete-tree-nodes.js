@@ -35,7 +35,7 @@ var countNodes = function(root) {
                   // console.log("deque",deque)
                   if(arr.length==0)
                       {
-                          arr=[...deque ]
+                          arr=deque
                           // count=count+deque.length
                           deque=[]
                           
