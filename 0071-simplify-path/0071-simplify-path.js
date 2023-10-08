@@ -9,7 +9,7 @@ var simplifyPath = function(path) {
     for(let i=0;i<path.length;i++)
         {
             
-            console.log("path[i]!=",path[i]!="" && path[i]!='.')
+           
             if(path[i]!="" && path[i]!='.')
                 {
                     // console.log("canonicalArray",canonicalArray)
